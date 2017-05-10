@@ -213,4 +213,6 @@ class PizzaTranslator extends Component {
   }
 }
 
+// 8.如何使用ScrollView
+
 AppRegistry.registerComponent('ReactNativeDemo', () => PizzaTranslator);
