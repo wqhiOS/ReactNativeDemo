@@ -11,7 +11,8 @@ import {
   Text,
   View,
   Image,
-  TextInput
+  TextInput,
+  ScrollView
 } from 'react-native';
 
 // 1.编写
@@ -214,5 +215,28 @@ class PizzaTranslator extends Component {
 }
 
 // 8.如何使用ScrollView
+class IScrolledDownAndWhatHappenedNextShockedMe extends Component {
+  render() {
+    return(
+      <ScrollView>
+        <Text style={{fontSize: 96}}>Scroll me plz</Text>
+        <Image source={require('./img/favicon.jpg')} />
+        <Image source={require('./img/favicon.jpg')} />
+        <Image source={require('./img/favicon.jpg')} />
+        <Image source={require('./img/favicon.jpg')} />
+        <Text style={{fontSize: 96}}>If you like</Text>
+        <Image source={require('./img/favicon.jpg')} />
+        <Image source={require('./img/favicon.jpg')} />
+        <Image source={require('./img/favicon.jpg')} />
+        <Image source={require('./img/favicon.jpg')} />
+        <Text style={{fontSize: 96}}>Scroll down</Text>
+        <Image source={require('./img/favicon.jpg')} />
+        <Image source={require('./img/favicon.jpg')} />
+        <Image source={require('./img/favicon.jpg')} />
+        <Image source={require('./img/favicon.jpg')} />
+      </ScrollView>
+    );
+  }
+}
 
-AppRegistry.registerComponent('ReactNativeDemo', () => PizzaTranslator);
+AppRegistry.registerComponent('ReactNativeDemo', () => IScrolledDownAndWhatHappenedNextShockedMe);
