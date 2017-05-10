@@ -10,7 +10,8 @@ import {
   StyleSheet,
   Text,
   View,
-  Image
+  Image,
+  TextInput
 } from 'react-native';
 
 // 1.编写
@@ -185,4 +186,31 @@ class AlignItemsBasics extends Component {
   }
 };
 
-AppRegistry.registerComponent('ReactNativeDemo', () => AlignItemsBasics);
+// 7 处理文本输入
+class PizzaTranslator extends Component {
+
+  state: {
+    text: ''
+  };//写这段代码的作用：http://stackoverflow.com/questions/36860349/flow-react-native-is-giving-me-errors-for-using-this-state，不写的话老警告
+
+  constructor(props) {
+    super(props);
+    this.state = {text: ''};
+  }
+  render() {
+    return (
+      <View style={{backgroundColor: 'gray',padding: 10}}>
+        <TextInput
+          style={{height:40}}
+          placeholder="Tye here to translate!"
+          onChangeText={(text) => this.setState({text})}
+        />
+        <Text style={{padding: 10,fontSize: 42}}>
+          {this.state.text.split(' ').map((word) => word&&'🍕').join('')}
+        </Text>
+      </View>
+    )
+  }
+}
+
+AppRegistry.registerComponent('ReactNativeDemo', () => PizzaTranslator);
