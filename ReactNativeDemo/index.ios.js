@@ -131,5 +131,58 @@ class FlexDimensionsBasics extends Component {
   }
 };
 
+// 6.使用Flexbox布局
+// 对布局有影响的完整样式列表记录在这篇文档中：http://reactnative.cn/docs/0.44/layout-props.html
+// 6.1FlexDirection:决定布局的主轴
+class FlexDirectionBasics extends Component {
+  render() {
+    return (
+      // 尝试把`flexDirection`改为`column`看看
+      <View style={{flex: 1, flexDirection: 'row'}}>
+        <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
+        <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
+        <View style={{width: 50, height: 50, backgroundColor: 'steelblue'}} />
+      </View>
+    );
+  }
+};
+// 6.2 JustifyContent：决定其子元素沿着主轴的排列方式 （flex-start、center、flex-end、space-around以及space-between）
+class JustifyContentBasics extends Component {
+  render() {
+    return (
+      // 尝试把`justifyContent`改为`center`看看
+      // 尝试把`flexDirection`改为`row`看看
+      <View style={{
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+      }}>
+        <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
+        <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
+        <View style={{width: 50, height: 50, backgroundColor: 'steelblue'}} />
+      </View>
+    );
+  }
+};
+// 6.3 alignItems:决定其子元素沿着次轴的排列方式（flex-start、center、flex-end以及stretch）
+class AlignItemsBasics extends Component {
+  render() {
+    return (
+      // 尝试把`alignItems`改为`flex-start`看看
+      // 尝试把`justifyContent`改为`flex-end`看看
+      // 尝试把`flexDirection`改为`row`看看
+      <View style={{
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}>
+        <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
+        <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
+        <View style={{width: 50, height: 50, backgroundColor: 'steelblue'}} />
+      </View>
+    );
+  }
+};
 
-AppRegistry.registerComponent('ReactNativeDemo', () => FixedDimensionsBasics);
+AppRegistry.registerComponent('ReactNativeDemo', () => AlignItemsBasics);
